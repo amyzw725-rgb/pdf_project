@@ -52,32 +52,9 @@ Python 版本建议 **3.10+**（与当前 `py` / `python` 环境一致即可）�
 
 ---
 
-## 下载安装包（给最终用户）
+## 下载安装包
 
 本应用是 **Python + Streamlit**，不提供内置 Python 的单一 `.exe` 安装器；标准做法是分发 **ZIP 安装包**（源码 + 批处理 + 说明），用户在 Windows 上安装 [Python](https://www.python.org/downloads/windows/) 后解压使用。
-
-### 维护者如何生成 ZIP
-
-在仓库根目录执行：
-
-```powershell
-pwsh -File .\build_release.ps1
-pwsh -File .\build_release.ps1 -Version "1.0.0"
-```
-
-产物：`dist\InvoicePDFHelper-Windows-<版本>.zip`（内含 `安装说明.txt`）。
-
-### 在 GitHub 上提供下载
-
-1. **GitHub Actions**：推送后打开 **Actions → “Build Windows package (ZIP)”**  
-   - **Run workflow** 手动运行：在 Artifacts 中下载 ZIP。  
-   - 推送 **`v*` 标签**（例如 `v1.0.0`）：同一工作流会把 ZIP **附加到该标签的 Release**（自动生成 Release 说明）。
-2. **Releases 页面**：用户到 **Releases** 下载 `InvoicePDFHelper-Windows-*.zip` 即可。
-
-### 可选：Inno Setup 的 setup.exe（≠ 自带 Python 的 exe）
-
-若需要 Windows 安装向导，可在本机安装 [Inno Setup](https://jrsoftware.org/isinfo.php)，先执行上面的 `build_release.ps1`，再按 **`installer/README.md`** 编译 `InvoicePDFHelper.iss`。  
-安装程序只负责解压文件与快捷方式，**用户电脑仍需单独安装 Python**；与「下载一个 exe 即内含运行时」不是同一形态。
 
 
 ```powershell
