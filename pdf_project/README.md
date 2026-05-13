@@ -2,8 +2,6 @@
 
 本地运行的 **Streamlit** 小工具：上传发票 PDF，批量解析字段，导出 **Excel**；数据与处理均在当前电脑完成，不依赖云端推理。
 
-**适合作为 GitHub 仓库简介的一句话：**
-
 > Windows 桌面端发票 PDF 批量解析工具：Streamlit 界面 + pdfplumber / Tesseract OCR + Poppler，导出 Excel；支持一键启动与依赖自检。
 
 ---
@@ -49,9 +47,7 @@ Python 版本建议 **3.10+**（与当前 `py` / `python` 环境一致即可）�
 | `安装说明.txt` | 随 ZIP 分发给最终用户的安装步骤（中文） |
 | `installer/` | 可选：Inno Setup 脚本生成 `setup.exe`（见 `installer/README.md`）；**不是**自带 Python 的单文件 exe |
 | `release/v1.0/README.md` | **1.0 版 GitHub 发布说明**（可上传目录的生成方式与常见误解澄清） |
-| `scripts/export_github_v1.ps1` | 在**桌面**生成 **`InvoicePDFHelper-v1.0-GitHub`**，并删除项目内旧的 `release\v1.0\github-ready`（若存在） |
 
-其他目录（如 `PDF Processor/`、`Old File/`、`Tesseract-OCR/`）多为历史脚本或本地工具链；**日常运行以仓库根目录上述文件为准**。**不要**将含真实发票的 `input` / `output` 提交到公开仓库。
 
 ---
 
@@ -82,11 +78,6 @@ pwsh -File .\build_release.ps1 -Version "1.0.0"
 若需要 Windows 安装向导，可在本机安装 [Inno Setup](https://jrsoftware.org/isinfo.php)，先执行上面的 `build_release.ps1`，再按 **`installer/README.md`** 编译 `InvoicePDFHelper.iss`。  
 安装程序只负责解压文件与快捷方式，**用户电脑仍需单独安装 Python**；与「下载一个 exe 即内含运行时」不是同一形态。
 
----
-
-## GitHub 1.0 干净上传目录
-
-要把 **v1.0 源码树** 单独作为新仓库推送（不含个人票据、不含 Tesseract / Poppler 大目录）：
 
 ```powershell
 pwsh -File .\scripts\export_github_v1.ps1
