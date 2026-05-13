@@ -123,11 +123,12 @@ py -m streamlit run streamlit_app.py
 
 **Poppler**：优先已有 `POPPLER_PATH` 或项目内 `poppler/`，否则可自动下载（见 `poppler_setup.py`）；也可自行安装并设置 `POPPLER_PATH`。
 
-##看板功能 
+关于看板功能： 
 
 累计处理数据本地保存，分别有批次的数据统计，和一周处理文件的统计，也可在左侧菜单清除。
 
-<img width="2809" height="1416" alt="image" src="https://github.com/user-attachments/assets/0f9784c4-458f-4724-af11-fbca0c841546" />
+<img width="2763" height="1476" alt="image" src="https://github.com/user-attachments/assets/4ccd4f3f-d301-4e9a-9e8b-8683ae67d355" />
+
 
 ---
 
