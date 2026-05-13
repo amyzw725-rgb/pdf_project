@@ -131,19 +131,6 @@ py -m streamlit run streamlit_app.py
 
 **Poppler**：优先已有 `POPPLER_PATH` 或项目内 `poppler/`，否则可自动下载（见 `poppler_setup.py`）；也可自行安装并设置 `POPPLER_PATH`。
 
----
-
-## 上传到 GitHub 时的建议
-
-- **不要**把体积巨大的二进制目录（完整 `Tesseract-OCR/`、自动下载的 `poppler/`、`.cache/`）提交进仓库，除非你有意用 Git LFS；本仓库 `.gitignore` 已包含 `poppler/` 与 `.cache/`。  
-- 提交 **`requirements.txt`**、**`README.md`**、**源码**；协作者本地再安装 Tesseract / Poppler 或使用脚本自动拉取 Poppler。  
-- 勿将含隐私的 **真实发票 PDF**、**含密钥的 `.env`** 推送到公开仓库。
-
----
-
-## 许可证
-
-未随仓库指定默认许可证；若开源请在仓库根目录添加 `LICENSE` 并在此 README 中注明。
 
 ---
 
