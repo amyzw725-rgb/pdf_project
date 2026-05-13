@@ -1,0 +1,11 @@
+# Poppler auto-download (binaries + cached zip)
+poppler/
+.cache/
+dist/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+.streamlit_productivity_stats.json

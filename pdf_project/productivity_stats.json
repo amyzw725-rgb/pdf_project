@@ -1,0 +1,10 @@
+{
+  "events": [
+    {
+      "ts": "2026-04-15T17:01:49",
+      "documents": 5,
+      "fields_filled": 33,
+      "elapsed_seconds": 9.152245
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+Invoice PDF Helper — Windows 安装说明
+=====================================
+
+一、环境要求
+-----------
+1. Windows 10 / 11（64 位）
+2. 已安装 Python 3.10 或更高版本，安装时勾选「Add python.exe to PATH」
+   下载：https://www.python.org/downloads/windows/
+
+二、解压
+-----------
+将本压缩包解压到任意文件夹（路径尽量简短；可含中文，避免仅受系统保护的目录）。
+
+三、安装依赖（首次必做）
+-----------
+任选一种方式：
+  A）双击运行 install_deps.bat（仅安装 Python 库）
+  B）双击运行 run_app.bat（会在启动前自动检查并安装缺失依赖）
+
+需要联网以下载 pip 包。首次可能需数分钟。
+
+四、启动程序
+-----------
+双击 Klero.vbs 或 run_app.bat，浏览器打开 http://localhost:8501
+若未自动打开，请手动在浏览器地址栏输入上述地址。
+
+五、Tesseract 与 Poppler（扫描件 OCR）
+-----------
+• Tesseract：若未使用项目内自带目录，请从官方安装，或设置环境变量 TESSERACT_CMD 指向 tesseract.exe
+• Poppler：首次运行若本机未安装，程序可能自动下载到解压目录下的 poppler 文件夹（需联网）；亦可自行安装并设置 POPPLER_PATH
+
+六、数据目录
+-----------
+运行后会在程序同目录下自动创建 input、output、archive 文件夹。
+
+七、更新版本
+-----------
+解压新版本覆盖同名文件即可；建议保留或备份 output 中的 Excel。
+
+---
+项目主页与源码见 README.md 中的 GitHub 链接（若有）。

@@ -1,0 +1,14 @@
+# Project-local Streamlit settings (used when cwd is this folder).
+# Ensures a desktop browser is opened instead of headless-only mode.
+
+[server]
+headless = false
+port = 8501
+
+[browser]
+gatherUsageStats = false
+
+# App uses a light gradient background; "system" dark theme would use light text → invisible.
+[theme]
+base = "light"
+primaryColor = "#3b82f6"

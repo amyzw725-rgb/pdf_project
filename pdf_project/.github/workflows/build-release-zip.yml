@@ -1,0 +1,55 @@
+# Build Windows distribution ZIP and attach on version tags, or upload artifact on manual run.
+name: Build Windows package (ZIP)
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version label for the zip filename (e.g. 1.0.0)"
+        required: false
+        default: "snapshot"
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  package:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set version label
+        id: ver
+        shell: pwsh
+        run: |
+          if ("${{ github.ref }}" -match '^refs/tags/(v.+)$') {
+            $v = $Matches[1]
+            echo "label=$v" >> $env:GITHUB_OUTPUT
+          } elseif ("${{ github.event.inputs.version }}" -ne "") {
+            echo "label=${{ github.event.inputs.version }}" >> $env:GITHUB_OUTPUT
+          } else {
+            echo "label=snapshot-${{ github.run_number }}" >> $env:GITHUB_OUTPUT
+          }
+
+      - name: Build ZIP
+        shell: pwsh
+        run: |
+          & "${{ github.workspace }}/build_release.ps1" -Version "${{ steps.ver.outputs.label }}"
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: InvoicePDFHelper-Windows-${{ steps.ver.outputs.label }}
+          path: dist/*.zip
+
+      - name: Attach to GitHub Release (tag pushes only)
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*.zip
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
