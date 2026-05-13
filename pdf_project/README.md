@@ -3,7 +3,7 @@
 本地运行的 **Streamlit** 小工具：上传发票 PDF，批量解析字段，导出 **Excel**；数据与处理均在当前电脑完成，不依赖云端推理。
 
 > Windows 桌面端发票 PDF 批量解析工具：Streamlit 界面 + pdfplumber / Tesseract OCR + Poppler，导出 Excel；支持一键启动与依赖自检。
-<img width="2803" height="1515" alt="image" src="https://github.com/user-attachments/assets/8e03ba50-5c59-4ba3-b3a1-e4e0ec2f923d" />
+<img width="2803/1.5" height="1515/1.5" alt="image" src="https://github.com/user-attachments/assets/8e03ba50-5c59-4ba3-b3a1-e4e0ec2f923d" />
 
 ---
 
